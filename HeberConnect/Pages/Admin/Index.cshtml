@@ -1,0 +1,45 @@
+﻿@page
+@model HeberConnect.Pages.Admin.IndexModel
+@{
+    Layout = "_LayoutAdmin";
+}
+<h1>Admin Dashboard</h1>
+<p>Welcome, Admin</p>
+<div class="d-flex align-items-center mb-4">
+    <!-- Day Order Box -->
+    <div style="width: 60px; height: 60px; background-color: #007bff; color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: bold; border-radius: 5px; margin-right: 15px;">
+        <span style="font-size: 24px;">@(((DateTime.Now.DayOfYear - 1) % 6) + 1)</span>
+        <span style="font-size: 12px;">Day</span>
+    </div>
+
+    <!-- Date + Weekday Box -->
+    <div style="background-color: #e9ecef; padding: 10px 20px; border-radius: 5px;">
+        <span style="font-size: 18px; font-weight: bold;">@DateTime.Now.ToString("dd MMMM yyyy")</span>
+        <br />
+        <span style="font-size: 14px;">@DateTime.Now.ToString("dddd")</span>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Complaints Card -->
+    <div class="col-md-4">
+        <div class="card p-3 text-center">
+            <h5 class="card-title">Complaints</h5>
+            <p class="card-text">
+                Pending: <strong>@Model.PendingComplaints</strong>
+            </p>
+            <a class="btn btn-warning btn-sm" asp-page="/Admin/ReviewComplaint">View Complaints</a>
+        </div>
+    </div>
+
+    <!-- Manage Users Card -->
+    <div class="col-md-4">
+        <div class="card p-3 text-center">
+            <h5 class="card-title">Manage Users</h5>
+            <p class="card-text">Add, edit or remove users.</p>
+            <a class="btn btn-primary btn-sm" asp-page="/Admin/ManageUsers">Go to Users</a>
+        </div>
+    </div>
+
+    
+</div>

@@ -1,0 +1,46 @@
+﻿@page
+@model HeberConnect.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="bg">
+    <div class="overlay text-center">
+        <h1>Welcome to Heber Connect</h1>
+        <p>Your gateway to staff & student services</p>
+    </div>
+</div>
+
+<style>
+    body, html {
+        height: 100%;
+        margin: 0;
+    }
+
+    .bg {
+        background-image: url('/images/college-bg.jpg'); /* put your bg in wwwroot/images */
+        height: 100vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .overlay {
+        background: rgba(0,0,0,0.5);
+        padding: 40px;
+        border-radius: 10px;
+        color: #fff;
+    }
+
+        .overlay h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .overlay p {
+            font-size: 1.2rem;
+        }
+</style>

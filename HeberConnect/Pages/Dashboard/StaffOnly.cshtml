@@ -1,0 +1,13 @@
+﻿@page
+@model HeberConnect.Pages.Dashboard.StaffOnlyModel
+@{
+    int dayOrder = ((DateTime.Now.DayOfYear - 1) % 6) + 1;
+}
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Today's Info</h4>
+        <p><strong>Date:</strong> @DateTime.Now.ToString("dd MMMM yyyy, dddd")</p>
+        <p><strong>Day Order:</strong> @dayOrder</p>
+    </div>
+</div>

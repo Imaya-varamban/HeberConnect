@@ -1,0 +1,42 @@
+﻿@page
+@model HeberConnect.Pages.Student.AssignmentsModel
+@{
+    ViewData["Title"] = "My To-Do List";
+}
+
+<h3>My To-Do List</h3>
+
+@if (Model.Assignments == null || !Model.Assignments.Any())
+{
+    <p>No assignments yet 🎉</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Deadline</th>
+                <th>Upload Work</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var a in Model.Assignments)
+            {
+                <tr>
+                    <td>@a.Title</td>
+                    <td>@a.Description</td>
+                    <td>@a.Deadline.ToShortDateString()</td>
+                    <td>
+                        <form method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="AssignmentId" value="@a.Id" />
+                            <input type="file" name="File" />
+                            <button type="submit" class="btn btn-sm btn-success">Submit</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

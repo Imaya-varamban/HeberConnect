@@ -1,0 +1,44 @@
+﻿@page
+@model HeberConnect.Pages.Student.SubmitComplaintModel
+@{
+    Layout = "~/Pages/Shared/_LayoutStudent.cshtml";
+}
+
+<h3>Submit a Complaint</h3>
+
+<form method="post">
+    <div class="form-group">
+        <label>Category</label>
+        <select asp-for="Complaint.Category" class="form-control" required>
+            <option value="">-- Select Category --</option>
+            <option>Electrical</option>
+            <option>Cleanliness</option>
+            <option>Staff</option>
+            <option>General</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Description</label>
+        <textarea asp-for="Complaint.Description" class="form-control" rows="4" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit Complaint</button>
+</form>
+
+@if (Model.MyComplaints.Any())
+{
+    <h4>My Complaints</h4>
+    <table class="table">
+        <tr><th>Date</th><th>Category</th><th>Description</th><th>Status</th></tr>
+        @foreach (var c in Model.MyComplaints)
+        {
+            <tr>
+                <td>@c.Date.ToShortDateString()</td>
+                <td>@c.Category</td>
+                <td>@c.Description</td>
+                <td>@c.Status</td>
+            </tr>
+        }
+    </table>
+}

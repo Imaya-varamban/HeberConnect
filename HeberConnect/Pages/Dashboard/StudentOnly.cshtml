@@ -1,0 +1,26 @@
+﻿@page
+@model HeberConnect.Pages.Dashboard.StudentOnlyModel
+@{
+    // Calculate day order (cycles 1 to 6)
+    int dayOrder = ((DateTime.Now.DayOfYear - 1) % 6) + 1;
+}
+
+<h3>Announcements</h3>
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Today's Info</h4>
+        <p><strong>Date:</strong> @DateTime.Now.ToString("dd MMMM yyyy, dddd")</p>
+        <p><strong>Day Order:</strong> @dayOrder</p>
+    </div>
+</div>
+
+<ul>
+    @foreach (var a in Model.Announcements)
+    {
+        <li>
+          <b></b> - @a.Message
+            <i>(@a.CreatedOn.ToShortDateString())</i>
+        </li>
+    }
+</ul>

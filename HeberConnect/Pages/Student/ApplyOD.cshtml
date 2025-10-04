@@ -1,0 +1,59 @@
+﻿@page
+@model HeberConnect.Pages.Student.ApplyODModel
+@{
+    Layout = "~/Pages/Shared/_LayoutStudent.cshtml";
+}
+
+<h3>Apply for OD / Early Leave</h3>
+
+
+<form method="post">
+    <div class="form-group">
+        <label>Date</label>
+        <input type="date" asp-for="ODRequest.Date" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label>Request Type</label><br />
+        <input type="radio" name="ODRequest.RequestType" value="FullDay" checked /> Full Day <br />
+        <input type="radio" name="ODRequest.RequestType" value="Hour" /> Early Leave (select hour)
+    </div>
+
+    <div class="form-group">
+        <label>Hour (if Early Leave)</label>
+        <select asp-for="ODRequest.Hour" class="form-control">
+            <option value="">-- Select Hour --</option>
+            <option value="1">Hour 1</option>
+            <option value="2">Hour 2</option>
+            <option value="3">Hour 3</option>
+            <option value="4">Hour 4</option>
+            <option value="5">Hour 5</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Reason</label>
+        <textarea asp-for="ODRequest.Reason" class="form-control" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit Request</button>
+</form>
+
+
+@if (Model.MyRequests.Any())
+{
+    <h4>My Requests</h4>
+    <table class="table">
+        <tr><th>Date</th><th>Type</th><th>Hour</th><th>Reason</th><th>Status</th></tr>
+        @foreach (var req in Model.MyRequests)
+        {
+            <tr>
+                <td>@req.Date.ToShortDateString()</td>
+                <td>@req.RequestType</td>
+                <td>@(req.RequestType == "Hour" ? req.Hour?.ToString() : "-")</td>
+                <td>@req.Reason</td>
+                <td>@req.Status</td>
+            </tr>
+        }
+    </table>
+}

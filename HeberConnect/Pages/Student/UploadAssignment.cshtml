@@ -1,0 +1,20 @@
+﻿@page
+@model HeberConnect.Pages.Student.UploadAssignmentModel
+@{
+    ViewData["Title"] = "Upload Assignment";
+}
+
+<h3>Upload Your Assignment</h3>
+
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="AssignmentFile">Select file to upload:</label>
+        <input type="file" name="AssignmentFile" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Upload</button>
+</form>
+
+@if (Model.Message != null)
+{
+    <div class="alert alert-info mt-2">@Model.Message</div>
+}

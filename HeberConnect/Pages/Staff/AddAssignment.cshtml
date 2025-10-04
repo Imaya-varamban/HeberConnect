@@ -1,0 +1,65 @@
+﻿@page
+@model HeberConnect.Pages.Staff.AddAssignmentModel
+@{
+    ViewData["Title"] = "Add Assignment";
+}
+
+<h2>Add Assignment</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Assignment.Title"></label>
+        <input asp-for="Assignment.Title" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Assignment.Description"></label>
+        <textarea asp-for="Assignment.Description" class="form-control"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Assignment.Deadline"></label>
+        <input asp-for="Assignment.Deadline" type="date" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Save</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.StatusMessage))
+{
+    <div class="alert alert-info mt-2">@Model.StatusMessage</div>
+}
+
+@if (Model.MyAssignments.Any())
+{
+    <h4 class="mt-4">Your Previous Assignments</h4>
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Deadline</th>
+                <th>Created On</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var a in Model.MyAssignments)
+            {
+                <tr>
+                    <td>@a.Title</td>
+                    <td>@a.Deadline.ToShortDateString()</td>
+                    <td>@a.CreatedOn.ToString("dd MMM yyyy")</td>
+                    <td>
+                        <a class="btn btn-sm btn-warning" asp-page="/Staff/EditAssignment" asp-route-id="@a.Id">Edit</a>
+                        <form method="post" asp-page-handler="Delete" asp-route-id="@a.Id" style="display:inline;">
+                            <button class="btn btn-sm btn-danger">Delete</button>
+                        </form>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+                   

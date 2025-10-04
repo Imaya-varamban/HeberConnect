@@ -1,0 +1,27 @@
+﻿@page
+@model HeberConnect.Pages.Staff.AssignmentsListModel
+@{
+    ViewData["Title"] = "Assignments List";
+}
+
+<h3>Assignments</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Deadline</th>
+            <th>Created By</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var a in Model.Assignments)
+        {
+            <tr>
+                <td>@a.Title</td>
+                <td>@a.Deadline.ToShortDateString()</td>
+                <td>@a.CreatedBy</td>
+            </tr>
+        }
+    </tbody>
+</table>

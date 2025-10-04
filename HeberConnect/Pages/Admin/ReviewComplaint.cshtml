@@ -1,0 +1,32 @@
+﻿@page
+@model HeberConnect.Pages.Admin.ReviewComplaintModel
+@{
+    Layout = "~/Pages/Shared/_LayoutAdmin.cshtml";
+}
+
+<h3>Review Complaints</h3>
+
+<table class="table">
+    <tr><th>Student</th><th>Date</th><th>Category</th><th>Description</th><th>Status</th><th>Action</th></tr>
+    @foreach (var c in Model.Complaints)
+    {
+        <tr>
+            <td>@c.StudentId</td>
+            <td>@c.Date.ToShortDateString()</td>
+            <td>@c.Category</td>
+            <td>@c.Description</td>
+            <td>@c.Status</td>
+            <td>
+                @if (c.Status == "Pending")
+                {
+                    <form method="post" asp-page-handler="Resolve" asp-route-id="@c.Id" style="display:inline;">
+                        <button class="btn btn-success btn-sm">Resolve</button>
+                    </form>
+                    <form method="post" asp-page-handler="Reject" asp-route-id="@c.Id" style="display:inline;">
+                        <button class="btn btn-danger btn-sm">Reject</button>
+                    </form>
+                }
+            </td>
+        </tr>
+    }
+</table>

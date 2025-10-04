@@ -1,0 +1,55 @@
+﻿@page
+@model HeberConnect.Pages.Staff.IndexModel
+@{
+    Layout = "_LayoutStaff";
+}
+
+<h2 class="mb-3">Staff Dashboard</h2>
+
+<div class="d-flex align-items-center mb-4">
+    <!-- Day Order Box -->
+    <div style="width: 60px; height: 60px; background-color: #007bff; color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: bold; border-radius: 5px; margin-right: 15px;">
+        <span style="font-size: 24px;">@(((DateTime.Now.DayOfYear - 1) % 6) + 1)</span>
+        <span style="font-size: 12px;">Day</span>
+    </div>
+
+    <!-- Date + Weekday Box -->
+    <div style="background-color: #e9ecef; padding: 10px 20px; border-radius: 5px;">
+        <span style="font-size: 18px; font-weight: bold;">@DateTime.Now.ToString("dd MMMM yyyy")</span>
+        <br />
+        <span style="font-size: 14px;">@DateTime.Now.ToString("dddd")</span>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <!-- Cards to create new items -->
+    <div class="col-md-6 mb-3">
+        <div class="card shadow-sm">
+            <div class="card-body text-center">
+                <h5 class="card-title">Add Announcement</h5>
+                <p class="card-text">Post announcements for students.</p>
+                <a class="btn btn-warning" asp-page="/Staff/AddAnnouncement">Create Announcement</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-3">
+        <div class="card shadow-sm">
+            <div class="card-body text-center">
+                <h5 class="card-title">Assignments</h5>
+                <p class="card-text">Create and manage assignments.</p>
+                <a class="btn btn-success" asp-page="/Staff/AddAssignment">Create Assignment</a>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">OD Requests</h5>
+            <p class="card-text">Review and approve/reject OD requests from students.</p>
+            <a class="btn btn-info" asp-page="/Staff/ReviewOD">Review Requests</a>
+        </div>
+    </div>
+
+</div>
+
+

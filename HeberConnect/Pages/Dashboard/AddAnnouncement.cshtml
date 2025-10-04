@@ -1,0 +1,47 @@
+﻿@page
+@model HeberConnect.Pages.Dashboard.AddAnnouncementModel
+@{
+    ViewData["Title"] = "Add Announcement";
+}
+
+<h2>Add Announcement</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label for="Message">Message</label>
+        <textarea asp-for="Announcement.Message" class="form-control"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Post</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.StatusMessage))
+{
+    <div class="alert alert-info mt-2">@Model.StatusMessage</div>
+}
+
+@if (Model.MyAnnouncements.Any())
+{
+    <h4 class="mt-4">Your Previous Announcements</h4>
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th>Message</th>
+                <th>Posted On</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var a in Model.MyAnnouncements)
+            {
+                <tr>
+                    <td>@a.Message</td>
+                    <td>@a.CreatedOn.ToString("dd MMM yyyy, HH:mm")</td>
+                    <td>
+                        <button class="btn btn-sm btn-warning">Edit</button>
+                        <button class="btn btn-sm btn-danger">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

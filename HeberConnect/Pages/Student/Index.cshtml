@@ -1,0 +1,105 @@
+﻿@page
+@model HeberConnect.Pages.Student.IndexModel
+@{
+    Layout = "_LayoutStudent";
+}
+
+<h2 class="mb-3">Student Dashboard</h2>
+
+<div class="d-flex align-items-center mb-4">
+    <!-- Day Order Box -->
+    <div style="width: 60px; height: 60px; background-color: #007bff; color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: bold; border-radius: 5px; margin-right: 15px;">
+        <span style="font-size: 24px;">@(((DateTime.Now.DayOfYear - 1) % 6) + 1)</span>
+        <span style="font-size: 12px;">Day</span>
+    </div>
+
+    <!-- Date + Weekday Box -->
+    <div style="background-color: #e9ecef; padding: 10px 20px; border-radius: 5px;">
+        <span style="font-size: 18px; font-weight: bold;">@DateTime.Now.ToString("dd MMMM yyyy")</span>
+        <br />
+        <span style="font-size: 14px;">@DateTime.Now.ToString("dddd")</span>
+    </div>
+</div>
+
+<!-- 2x2 Card Grid -->
+<div class="row mt-4">
+    <!-- Announcements Card -->
+    <div class="col-md-6 mb-3">
+        <div class="card shadow-sm h-100">
+            <div class="card-body text-center d-flex flex-column justify-content-center">
+                <h5 class="card-title">
+                    Announcements
+                    @if (Model.HasNewAnnouncements)
+                    {
+                        <span class="badge bg-danger ms-1">●</span>
+                    }
+                </h5>
+                <p class="card-text">Check the latest announcements from staff.</p>
+                <a class="btn btn-primary" asp-page="/Student/Announcements">View Announcements</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Assignments Card -->
+    <div class="col-md-6 mb-3">
+        <div class="card shadow-sm h-100">
+            <div class="card-body text-center d-flex flex-column justify-content-center">
+                <h5 class="card-title">Assignments</h5>
+                <p class="card-text">View your assignments and deadlines.</p>
+                <a class="btn btn-success" asp-page="/Student/Assignments">Go to Assignments</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- On Duty / Early Leave Card -->
+    <div class="col-md-6 mb-3">
+        <div class="card shadow-sm h-100">
+            <div class="card-body text-center d-flex flex-column justify-content-center">
+                <h5 class="card-title">On Duty / Early Leave</h5>
+                <p class="card-text">Apply for OD requests and view your request history.</p>
+                <a class="btn btn-danger" asp-page="/Student/ApplyOD">Apply Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Submit Complaints Card -->
+    <div class="col-md-6 mb-3">
+        <div class="card shadow-sm h-100">
+            <div class="card-body text-center d-flex flex-column justify-content-center">
+                <h5 class="card-title">Submit Complaints</h5>
+                <p class="card-text">Report issues like electrical, cleanliness, or general grievances.</p>
+                <a class="btn btn-warning" asp-page="/Student/SubmitComplaint">Lodge Complaint</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Separate quick upcoming assignments section -->
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Upcoming Deadlines</h5>
+                @if (Model.Assignments.Any())
+                {
+                    <ul class="list-group list-group-flush">
+                        @foreach (var a in Model.Assignments)
+                        {
+                            var daysLeft = (a.Deadline - DateTime.Now).Days;
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>@a.Title</span>
+                                <span class="text-muted">
+                                    @((daysLeft > 0) ? $"{daysLeft} days left" : "Expired")
+                                </span>
+                            </li>
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <p class="text-muted">No upcoming assignments.</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
