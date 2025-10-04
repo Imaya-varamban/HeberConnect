@@ -73,7 +73,7 @@ HeberConnect/
 ![Staff Dashboard](HeberConnect/wwwroot/images/stf.png)  
 *Staff dashboard overview.*
 
-![Home Page](HeberConnect/wwwroot/images/home.png)  
+![Home Page](HeberConnect/wwwroot/images/home.jpg)  
 *Home page of HeberConnect web app.*
 
 
