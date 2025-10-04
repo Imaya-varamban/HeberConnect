@@ -49,31 +49,31 @@ HeberConnect/
 ![Login Page](HeberConnect/wwwroot/images/login.png)  
 *Login page for students and staff.*
 
-![To-Do List](wwwroot/images/todo.png)  
+![To-Do List](HeberConnect/wwwroot/images/todo.png)  
 *Student dashboard showing To-Do list of tasks.*
 
-![Announcements](wwwroot/images/ann.png)  
+![Announcements](HeberConnect/wwwroot/images/ann.png)  
 *Announcements displayed to students in the dashboard.*
 
-![Student Dashboard](wwwroot/images/stu.png)  
+![Student Dashboard](HeberConnect/wwwroot/images/stu.png)  
 *Student dashboard overview.*
 
-![Review Complaints](wwwroot/images/rv-cmpl.png)  
+![Review Complaints](HeberConnect/wwwroot/images/rv-cmpl.png)  
 *Admin reviewing submitted complaints.*
 
-![Admin Dashboard - Review OD](wwwroot/images/rev-od.png)  
+![Admin Dashboard - Review OD](HeberConnect/wwwroot/images/rev-od.png)  
 *Staff dashboard for reviewing OD requests.*
 
-![Add Assignment](wwwroot/images/add-asgn.png)  
+![Add Assignment](HeberConnect/wwwroot/images/add-asgn.png)  
 *Staff adding new assignments for students.*
 
-![Add Announcement](wwwroot/images/add-ann.png)  
+![Add Announcement](HeberConnect/wwwroot/images/add-ann.png)  
 *Staff creating announcements.*
 
-![Staff Dashboard](wwwroot/images/stf.png)  
+![Staff Dashboard](HeberConnect/wwwroot/images/stf.png)  
 *Staff dashboard overview.*
 
-![Home Page](wwwroot/images/home.png)  
+![Home Page](HeberConnect/wwwroot/images/home.png)  
 *Home page of HeberConnect web app.*
 
 
