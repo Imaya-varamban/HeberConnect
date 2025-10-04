@@ -46,7 +46,7 @@ HeberConnect/
 
 ## 📸 Project Screenshots
 
-![Login Page](wwwroot/images/login.png)  
+![Login Page](HeberConnect/wwwroot/images/login.png)  
 *Login page for students and staff.*
 
 ![To-Do List](wwwroot/images/todo.png)  
