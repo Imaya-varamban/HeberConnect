@@ -46,18 +46,36 @@ HeberConnect/
 
 ## 📸 Project Screenshots
 
-![Home Page](screenshots/homepage.png)
-*Dashboard showing announcements.*
+![Login Page](wwwroot/images/login.png)  
+*Login page for students and staff.*
 
-![Assignments Page](screenshots/assignments.png)
-*View and submit assignments.*
+![To-Do List](wwwroot/images/todo.png)  
+*Student dashboard showing To-Do list of tasks.*
 
-![OD Requests](screenshots/odrequests.png)
-*Manage OD requests.*
+![Announcements](wwwroot/images/ann.png)  
+*Announcements displayed to students in the dashboard.*
 
-> Explore all features: assignments, OD requests, announcements, and dashboard.
+![Student Dashboard](wwwroot/images/stu.png)  
+*Student dashboard overview.*
 
----
+![Review Complaints](wwwroot/images/rv-cmpl.png)  
+*Admin reviewing submitted complaints.*
+
+![Admin Dashboard - Review OD](wwwroot/images/rev-od.png)  
+*Staff dashboard for reviewing OD requests.*
+
+![Add Assignment](wwwroot/images/add-asgn.png)  
+*Staff adding new assignments for students.*
+
+![Add Announcement](wwwroot/images/add-ann.png)  
+*Staff creating announcements.*
+
+![Staff Dashboard](wwwroot/images/stf.png)  
+*Staff dashboard overview.*
+
+![Home Page](wwwroot/images/home.png)  
+*Home page of HeberConnect web app.*
+
 
 ## 💻 Technologies Used
 
