@@ -1,8 +1,8 @@
 
-
-HeberConnect is an **ASP.NET Core Razor Pages web application** that provides a **centralized hub for students and staff**. It automates academic and administrative tasks, reducing manual processes and unifying all activities in a single platform.
+HeberConnect is an in-house college portal that unifies announcements, assignments, leave requests, and complaints, replacing scattered tools. It can expand to support more campus needs over time.
 
 ---
+As students, we often struggled with fragmented academic communication. Announcements came through WhatsApp groups, assignments were handled through Google Classroom, and OD requests or complaints had to be submitted using paper forms. Because these systems were disconnected, important updates were sometimes missed, and administrative processes became slow and inefficient. These real challenges inspired us to build an in-house unified platform that centralizes communication, academic tasks, and administrative workflows into one accessible system.
 
 ## 🌟 Key Features
 
@@ -82,10 +82,14 @@ HeberConnect/
 * ASP.NET Core 8
 * Razor Pages
 * Entity Framework Core 
+
 ## 📌 Future Improvements
--	Mobile Application Support: This will expand the platform and make it available to Android and iOS devices, which will be more convenient to students and faculty.
--	Addition of the system to display all kinds of student notifications, including library due dates, book returning deadlines, and fee payment notifications among other academic messages, thus making Heber Connect a unified notification center among students.
--	Advanced Notification System: The introduction of push notifications, SMS alerts, email reminders on key updates (assistance due, OD approvals) will be introduced.
+* **Emergency instant notifications** (e.g., urgent campus alerts, blood donation needs)
+* **Staff availability status** (to avoid students going back and forth during office hours or break time)
+* **Library due-date reminders** and fee payment reminders
+* **Event and competition announcements** with open registrations
+* **A chatbot** for FAQs and basic support
+* **A mobile app version** for even easier access
 
 
 
